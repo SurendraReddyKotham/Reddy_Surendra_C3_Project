@@ -62,4 +62,14 @@ public class Restaurant {
         return name;
     }
 
+    public int displayOrderTotal(List<String> itemList) {
+        int total = 0;
+        for (String item:itemList) {
+           Item orderedItem = findItemByName(item);
+           total+=orderedItem.getPrice();
+        }
+        System.out.println("The total bill amount is : "+total);
+        return total;
+    }
+
 }

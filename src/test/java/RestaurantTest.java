@@ -1,7 +1,8 @@
 import org.junit.jupiter.api.*;
-import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mockStatic;
@@ -68,4 +69,10 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void display_order_total() {
+
+        assertEquals(119,restaurant.displayOrderTotal(new ArrayList<>(List.of("Sweet corn soup"))));
+    }
 }
